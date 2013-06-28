@@ -1,6 +1,6 @@
 [user]
-  email = ryan@mcgeary.org
-  name = Ryan McGeary
+	name = Stuart Olivera
+	email = stuart@stuartolivera.com
 [alias]
   co = checkout
   st = status
@@ -26,8 +26,10 @@
 [diff]
   ignoresubmodules = untracked
 [core]
-  excludesfile = /Users/rmcgeary/.gitignore
+  excludesfile = /Users/stuartn/.gitignore
 [heroku]
   account = personal
 [pull]
 	rebase = true
+[mergetool]
+	keepBackup = true
