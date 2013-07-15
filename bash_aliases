@@ -20,10 +20,12 @@ alias .2="cd ../../"
 alias .3="cd ../../../"
 alias .4="cd ../../../../"
 alias .5="cd ../../../../../"
+alias ~="cd ~"
 
 alias c="clear"
 
 alias path='echo -e ${PATH//:/\\n}'
+alias ax="chmod a+x"
 
 ############################################################
 ## List
@@ -58,7 +60,9 @@ alias gl="git pull"
 alias glr="git pull --rebase"
 alias gp="git push"
 alias gs="git status -sb"
+alias gr="git remote"
 alias grp="git remote prune"
+alias gcp="git cherry-pick"
 alias gg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci)%Creset' --abbrev-commit --date=relative"
 alias ggs="gg --stat"
 alias gsl="git shortlog -sn"
@@ -120,6 +124,18 @@ alias dstore-clean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
 
 # Track who is listening to your iTunes music
 alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+# Show/hide hidden files in Finder
+alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Hide/show all desktop icons (useful when presenting)
+alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 ############################################################
 ## Ruby
@@ -185,7 +201,7 @@ function heroku_command {
     echo "$*"
   fi
 }
-
+..
 function hstaging {
   heroku `heroku_command $*` --remote staging
 }
@@ -232,6 +248,8 @@ alias prettyjson="python -mjson.tool"
 alias flushdns='dscacheutil -flushcache'
 
 alias whichlinux='uname -a; cat /etc/*release; cat /etc/issue'
+
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 function serve {
   local port=$1
