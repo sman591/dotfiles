@@ -67,8 +67,6 @@ alias gg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias ggs="gg --stat"
 alias gsl="git shortlog -sn"
 alias gw="git whatchanged"
-alias gsr="git svn rebase"
-alias gsp="git svn dcommit"
 alias gsu="git submodule update --init --recursive"
 alias gi="git config branch.master.remote 'origin'; git config branch.master.merge 'refs/heads/master'"
 if [ `which hub 2> /dev/null` ]; then
@@ -98,6 +96,16 @@ function gco {
   else
     git checkout $*
   fi
+}
+
+function gprune {
+  local remote=$1
+  if [ -z "$1" ]; then
+    remote=origin
+  fi
+  local cmd="git remote prune $remote"
+  echo $cmd
+  $cmd
 }
 
 function st {
@@ -188,7 +196,6 @@ alias binit="bi && bundle package"
 ## Middleman
 ############################################################
 alias m="be middleman"
-alias mpublish="m build --clean && m deploy"
 
 ############################################################
 ## Heroku
@@ -231,16 +238,19 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 ############################################################
 
 alias e='emacsclient'
-alias install_emacs_head='brew install emacs --HEAD --use-git-head --srgb --cocoa'
 alias install_emacs='brew install emacs --srgb --cocoa'
-alias upgrade_emacs='brew uninstall emacs && install_emacs'
+alias install_emacs_head='brew install bazaar && brew install emacs --HEAD --srgb --cocoa'
 alias link_emacs='ln -snf /usr/local/Cellar/emacs/24.2/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/24.2/bin/emacsclient /usr/local/bin/emacsclient'
+alias link_emacs_head='ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacsclient /usr/local/bin/emacsclient'
+alias upgrade_emacs='brew uninstall emacs && install_emacs && link_emacs'
+alias upgrade_emacs_head='brew uninstall emacs && install_emacs_head && link_emacs_head'
 
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
 alias wgeto="wget -q -O -"
 alias sha1="openssl dgst -sha1"
 alias sha2="openssl dgst -sha256"
+alias sha512="openssl dgst -sha512"
 alias b64="openssl enc -base64"
 alias 256color="export TERM=xterm-256color"
 alias prettyjson="python -mjson.tool"
