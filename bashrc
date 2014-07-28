@@ -162,7 +162,7 @@ export EDITOR="subl -w"
 # sessions (weird that this is not enabled by default).
 shopt -s histappend
 
-export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+export HISTIGNORE="&:pwd:ll:[bf]g:exit"
 # remove duplicates from the history (when a new item is added)
 export HISTCONTROL=erasedups
 # increase the default size from only 1,000 items
