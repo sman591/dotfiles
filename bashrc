@@ -54,9 +54,8 @@ function conditionally_prefix_cdpath {
   fi
 }
 
-conditionally_prefix_cdpath ~/work
-conditionally_prefix_cdpath ~/work/oss
-conditionally_prefix_cdpath ~/Repositories
+conditionally_prefix_cdpath /SSD_Files/Repositories
+conditionally_prefix_cdpath /SSD_Files/Repositories
 
 CDPATH=.:${CDPATH}
 
