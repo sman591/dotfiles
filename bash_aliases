@@ -56,8 +56,9 @@ alias gb="git branch -a -v"
 alias gc="git commit -v"
 alias gca="git commit -v -a"
 alias gd="git diff"
-alias gl="git pull"
+alias gl="git pull --prune"
 alias glr="git pull --rebase"
+alias gf="git fetch --prune"
 alias gp="git push"
 alias gs="git status -sb"
 alias gr="git remote"
@@ -149,7 +150,6 @@ alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false &
 ## Ruby
 ############################################################
 
-alias r="rake"
 alias rtags="ctags -e -R app lib vendor tasks"
 
 function gemdir {
@@ -208,7 +208,7 @@ function heroku_command {
     echo "$*"
   fi
 }
-..
+
 function hstaging {
   heroku `heroku_command $*` --remote staging
 }
@@ -221,12 +221,25 @@ function hproduction {
 ## Rails
 ############################################################
 
-#alias rails="rails -m ~/.rails.d/template.rb"
+alias tl="tail -f log/development.log"
+
+# Rails 2
 alias ss="script/server"
 alias sg="script/generate"
 alias sc="script/console"
+
+# Rails 3
 alias sr="script/rails"
-alias tl='tail -f log/development.log'
+alias src="sr console"
+
+# Rails 3 or 4
+function r {
+  if [ -e "script/rails" ]; then
+    script/rails $*
+  else
+    rails $* # Assumes rbenv-binstubs
+  fi
+}
 
 ############################################################
 ## MongoDB
@@ -240,7 +253,7 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 alias e='emacsclient'
 alias install_emacs='brew install emacs --srgb --cocoa'
 alias install_emacs_head='brew install bazaar && brew install emacs --HEAD --srgb --cocoa'
-alias link_emacs='ln -snf /usr/local/Cellar/emacs/24.2/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/24.2/bin/emacsclient /usr/local/bin/emacsclient'
+alias link_emacs='ln -snf /usr/local/Cellar/emacs/24.3/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/24.3/bin/emacsclient /usr/local/bin/emacsclient'
 alias link_emacs_head='ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacsclient /usr/local/bin/emacsclient'
 alias upgrade_emacs='brew uninstall emacs && install_emacs && link_emacs'
 alias upgrade_emacs_head='brew uninstall emacs && install_emacs_head && link_emacs_head'

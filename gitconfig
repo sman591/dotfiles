@@ -1,12 +1,12 @@
-[user]
-	name = Stuart Olivera
-	email = stuart@stuartolivera.com
+[include]
+  path = ~/.gitconfig_local
 [alias]
   co = checkout
   st = status
   br = branch
   w = whatchanged
   amend = commit --amend
+  unstage = reset HEAD --
 [apply]
   whitespace = nowarn
 [color]
@@ -29,6 +29,4 @@
 [heroku]
   account = personal
 [pull]
-	rebase = true
-[mergetool]
-	keepBackup = true
+  rebase = true

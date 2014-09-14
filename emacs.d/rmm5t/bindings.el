@@ -11,9 +11,9 @@
 
 ;; Find stuff
 (global-set-key [(f2)]              'ack)
-(global-set-key [(control f2)]      'ack-same)
-(global-set-key [(control meta f2)] 'ack-default-directory)
-(global-set-key [(meta f2)]         'find-name-dired)
+(global-set-key [(super f2)]        'ack-same)
+(global-set-key [(meta f2)]         'ack-default-directory)
+(global-set-key [(control meta f2)] 'find-name-dired)
 (global-set-key [(shift f2)]        'occur)
 
 (global-set-key (kbd "C-c r")       'query-replace)
@@ -34,10 +34,8 @@
 (global-set-key [(meta f8)]    'align-regexp)
 
 ;; Version control and change related
-;(global-set-key [(control f9)]      'rails-svn-status-into-root)  ;; Move to rails mode?
-;(global-set-key [(control meta f9)] (lambda () (interactive) (svn-status default-directory)))
-(global-set-key [(control f9)] (lambda () (interactive) (magit-status default-directory)))
-(global-set-key [(f9)]         (lambda () (interactive) (magit-status default-directory)))
+(global-set-key [(control f9)] 'magit-status)
+(global-set-key [(f9)]         'magit-status)
 (global-set-key [(meta f9)]    'autotest-switch)  ;; Move to ruby/rails mode?
 
 ;; map the window manipulation keys to meta 0, 1, 2, o
@@ -74,6 +72,7 @@
 
 ;; Easy inserts
 (global-set-key (kbd "C-.") 'insert-arrow)
+(global-set-key (kbd "C-;") 'ruby-hash-converter)
 
 ;; ibuffer > list-buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -97,5 +96,10 @@
 ;; Goto Line
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-;; Whitespace management
 (global-set-key (kbd "s-\\") 'fixup-whitespace)
+
+;; Help teach to unlearn the arrow keys
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<down>"))
