@@ -200,6 +200,12 @@ if [[ "$USER" == '' ]]; then
   USER=$USERNAME
 fi
 
+function git-trim() {
+  git branch --merged master | grep -v "\master" | xargs -n 1 git branch -d
+  echo ""
+  git branch
+}
+
 ############################################################
 ## Ruby Performance Boost (see https://gist.github.com/1688857)
 ############################################################
