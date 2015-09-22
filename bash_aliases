@@ -250,6 +250,8 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 ## Miscellaneous
 ############################################################
 
+alias cs='ssh swo8127@cerberus.cs.rit.edu'
+
 alias e='emacsclient'
 alias install_emacs='brew install emacs --srgb --cocoa'
 alias install_emacs_head='brew install bazaar && brew install emacs --HEAD --srgb --cocoa'
