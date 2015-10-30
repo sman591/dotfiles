@@ -201,7 +201,13 @@ if [[ "$USER" == '' ]]; then
 fi
 
 function git-trim() {
-  git branch --merged master | grep -v "\master" | xargs -n 1 git branch -d
+  if [ -z "$1" ]
+  then
+    branch="master"
+  else
+    branch=$1
+  fi
+  git branch --merged $branch | grep -v $branch | xargs -n 1 git branch -d
   echo ""
   git branch
 }
