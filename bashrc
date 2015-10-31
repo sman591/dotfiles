@@ -212,6 +212,9 @@ function git-trim() {
   git branch
 }
 
+# boot2docker
+eval `boot2docker shellinit 2>/dev/null`
+
 ############################################################
 ## Ruby Performance Boost (see https://gist.github.com/1688857)
 ############################################################
