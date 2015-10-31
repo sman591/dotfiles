@@ -1,3 +1,7 @@
+# Stuart Olivera's Dotfiles
+
+My `~/.dotfiles`. Initially based off of [Ryan McGeary's dotfiles](https://github.com/rmm5t/dotfiles).
+
 # Getting Started
 
 Clone this (or a forked version of this) repository.
