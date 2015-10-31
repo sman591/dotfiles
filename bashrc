@@ -224,3 +224,5 @@ export RUBY_GC_HEAP_FREE_SLOTS=200000 # Ruby >= 2.1
 [ -f /Volumes/Monster/Users/stuart/.travis/travis.sh ] && source /Volumes/Monster/Users/stuart/.travis/travis.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export COCOAPODS_NO_BUNDLER=1
