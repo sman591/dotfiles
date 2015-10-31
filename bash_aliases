@@ -118,33 +118,12 @@ function st {
 }
 
 ############################################################
-## Subversion
-############################################################
-
-# Remove all .svn folders from directory recursively
-alias svn-clean='find . -name .svn -print0 | xargs -0 rm -rf'
-
-############################################################
 ## OS X
 ############################################################
-
-# Get rid of those pesky .DS_Store files recursively
-alias dstore-clean='find . -type f -name .DS_Store -print0 | xargs -0 rm'
-
-# Track who is listening to your iTunes music
-alias whotunes='lsof -r 2 -n -P -F n -c iTunes -a -i TCP@`hostname`:3689'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
-
-# Show/hide hidden files in Finder
-alias showdotfiles="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hidedotfiles="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Hide/show all desktop icons (useful when presenting)
-alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 
 ############################################################
 ## Ruby
@@ -190,7 +169,7 @@ alias bi="b install --path vendor"
 alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
-alias binit="bi && bundle package"
+#alias binit="bi && bundle package"
 
 ############################################################
 ## Middleman
@@ -223,11 +202,6 @@ function hproduction {
 
 alias tl="tail -f log/development.log"
 
-# Rails 2
-alias ss="script/server"
-alias sg="script/generate"
-alias sc="script/console"
-
 # Rails 3
 alias sr="script/rails"
 alias src="sr console"
@@ -251,14 +225,6 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 ############################################################
 
 alias cs='ssh swo8127@georgia.cs.rit.edu'
-
-alias e='emacsclient'
-alias install_emacs='brew install emacs --srgb --cocoa'
-alias install_emacs_head='brew install bazaar && brew install emacs --HEAD --srgb --cocoa'
-alias link_emacs='ln -snf /usr/local/Cellar/emacs/24.3/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/24.3/bin/emacsclient /usr/local/bin/emacsclient'
-alias link_emacs_head='ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacs /usr/local/bin/emacs && ln -snf /usr/local/Cellar/emacs/HEAD/bin/emacsclient /usr/local/bin/emacsclient'
-alias upgrade_emacs='brew uninstall emacs && install_emacs && link_emacs'
-alias upgrade_emacs_head='brew uninstall emacs && install_emacs_head && link_emacs_head'
 
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
