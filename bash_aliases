@@ -242,6 +242,8 @@ alias whichlinux='uname -a; cat /etc/*release; cat /etc/issue'
 
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+alias venv="source venv/bin/activate"
+
 function serve {
   local port=$1
   : ${port:=3000}
