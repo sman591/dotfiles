@@ -226,6 +226,7 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 
 alias cs='ssh swo8127@georgia.cs.rit.edu'
 alias v='vagrant'
+alias t='gittower .'
 
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
