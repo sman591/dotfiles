@@ -227,6 +227,7 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 alias cs='ssh swo8127@georgia.cs.rit.edu'
 alias v='vagrant'
 alias t='gittower .'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl '
 alias s='subl '
 
 export GREP_COLOR="1;37;41"
