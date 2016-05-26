@@ -54,7 +54,6 @@ function conditionally_prefix_cdpath {
 }
 
 conditionally_prefix_cdpath /SSD_Files/Repositories
-conditionally_prefix_cdpath /SSD_Files/Repositories
 
 CDPATH=.:${CDPATH}
 
