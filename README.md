@@ -33,6 +33,15 @@ update all the git submodules manually.
 **(Option 3)** Just look around and pick and choose what you like for your own
   dotfiles.
 
+# System Dependencies
+
+```
+brew install cmake
+brew install node
+brew install postgres
+brew install rbenv ruby-build
+```
+
 ## Notes
 
 If you'd like to use git and github, be sure to add your own `~/.gitconfig_local` file:
