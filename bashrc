@@ -148,7 +148,7 @@ shopt -s extglob
 shopt -s checkwinsize
 
 export PAGER="less"
-export EDITOR="subl -w"
+export EDITOR="subl -n -w"
 
 ############################################################
 ## History
