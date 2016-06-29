@@ -15,6 +15,13 @@ submodules within.
 
     $ cd ~/.dotfiles
     $ ./install.rb
+    $ ./install-system.rb
+
+Then, restart your terminal session.
+
+    $ cd ~/.dotfiles
+    $ ./install-system-finish.rb
+
 
 This install script is idempotent, meaning you can run it over and over again
 without fear of breaking anything. Use it as an installer or to upgrade after
