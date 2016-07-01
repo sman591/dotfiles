@@ -2,6 +2,7 @@
 
 echo "Installing development utilities..."
 brew install rbenv ruby-build rbenv-readline rbenv-gem-rehash rbenv-default-gems rbenv-binstubs
+brew install nodenv
 brew install redis
 brew install postgresql
 
