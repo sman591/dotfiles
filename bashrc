@@ -120,25 +120,26 @@ elif [ `which ruby 2> /dev/null` ]; then
   }
 else
   function ruby_prompt {
-    echo ""
+    echo "_"
   }
 fi
 
-if [ `which rbenv-gemset 2> /dev/null` ]; then
-  function gemset_prompt {
-    local gemset=$(rbenv gemset active 2> /dev/null)
-    if [ $gemset ]; then
-      echo " ${gemset}"
-    fi
+if [ `which nodenv 2> /dev/null` ]; then
+  function node_prompt {
+    echo $(nodenv version-name)
+  }
+elif [ `which node 2> /dev/null` ]; then
+  function node_prompt {
+    echo $(node --version | cut -d' ' -f2)
   }
 else
-  function gemset_prompt {
-    echo ""
+  function node_prompt {
+    echo "_"
   }
 fi
 
 if [ -n "$BASH" ]; then
-  export PS1='\[\033[32m\]\n[\s: \w] ($(ruby_prompt)$(gemset_prompt)) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+  export PS1='\[\033[32m\]\n\s: \w \[\033[91m\]$(ruby_prompt)\[\033[32m\] \[\033[95m\]$(node_prompt)\[\033[32m\] $(git_prompt)\n\[\033[31m\]\u@\h\$ \[\033[00m\]'
 fi
 
 ############################################################
