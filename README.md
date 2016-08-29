@@ -7,7 +7,7 @@ My `~/.dotfiles`. Initially based off of [Ryan McGeary's dotfiles](https://githu
 Clone this (or a forked version of this) repository.
 
     $ cd ~
-    $ git clone https://github.com/rmm5t/dotfiles.git .dotfiles
+    $ git clone https://github.com/sman591/dotfiles.git .dotfiles
 
 **(Option 1)** If you'd like to symlink everything from this repository to your
 home directory, run `install.rb`. This will also sync and update all the git
@@ -15,12 +15,12 @@ submodules within.
 
     $ cd ~/.dotfiles
     $ ./install.rb
-    $ ./install-system.rb
+    $ ./install-system.sh
 
 Then, restart your terminal session.
 
     $ cd ~/.dotfiles
-    $ ./install-system-finish.rb
+    $ ./install-system-finish.sh
 
 
 This install script is idempotent, meaning you can run it over and over again
