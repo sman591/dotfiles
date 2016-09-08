@@ -55,7 +55,7 @@ function conditionally_prefix_cdpath {
   fi
 }
 
-conditionally_prefix_cdpath ~/Repositories
+conditionally_prefix_cdpath ~/dev
 
 CDPATH=.:${CDPATH}
 
