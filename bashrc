@@ -10,6 +10,7 @@ fi
 ## PATH
 ############################################################
 
+export GOPATH=$HOME/dev/go
 function conditionally_prefix_path {
   local dir=$1
   if [ -d $dir ]; then
@@ -25,6 +26,7 @@ conditionally_prefix_path /usr/local/heroku/bin
 conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
+conditionally_prefix_path $GOPATH/bin
 
 PATH=.:./bin:${PATH}
 
