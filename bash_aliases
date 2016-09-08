@@ -228,6 +228,7 @@ alias cs='ssh swo8127@georgia.cs.rit.edu'
 alias v='vagrant'
 alias t='gittower .'
 alias s='subl '
+alias kc='kubectl '
 
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
