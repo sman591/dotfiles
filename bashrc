@@ -143,6 +143,14 @@ if [ -n "$BASH" ]; then
   export PS1='\[\033[32m\]\n> \s: \w \[\033[91m\]$(ruby_prompt)\[\033[32m\] \[\033[95m\]$(node_prompt)\[\033[32m\] $(git_prompt)\n\[\033[31m\]> \u@\h\$ \[\033[00m\]'
 fi
 
+function _update_ps1() {
+    PS1="\[\033[31m\]\n\u@\h \[\033[32m\]($(ruby_prompt)$(gemset_prompt))\n$(~/Repositories/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+}
+
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 ############################################################
 ## Optional shell behavior
 ############################################################
