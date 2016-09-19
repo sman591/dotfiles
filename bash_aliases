@@ -229,6 +229,7 @@ alias v='vagrant'
 alias t='gittower .'
 alias s='subl '
 alias kc='kubectl '
+alias meteor='/usr/local/bin/meteor'
 
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
