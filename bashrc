@@ -29,6 +29,7 @@ conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
 conditionally_prefix_path $GOPATH/bin
+conditionally_prefix_path $HOME/.yarn/bin
 
 PATH=.:./bin:${PATH}
 
