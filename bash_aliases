@@ -74,6 +74,7 @@ if [ `which hub 2> /dev/null` ]; then
   alias git="hub"
 fi
 alias git-churn="git log --pretty="format:" --name-only | grep -vE '^(vendor/|$)' | sort | uniq -c | sort"
+alias gfix="git commit --fixup"
 
 # Useful report of what has been committed locally but not yet pushed to another
 # branch.  Defaults to the remote origin/master.  The u is supposed to stand for
