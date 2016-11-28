@@ -17,3 +17,4 @@ gemfiles/vendor
 .foreman
 /dump
 venv/
+npm-debug.log
