@@ -11,7 +11,6 @@ fi
 ############################################################
 
 export GOPATH=$HOME/dev/go
-export KUBECONFIG=$HOME/dev/coreos/dev-cluster/kubeconfig
 
 function conditionally_prefix_path {
   local dir=$1
