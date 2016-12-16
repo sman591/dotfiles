@@ -213,6 +213,10 @@ function git-trim() {
   git branch
 }
 
+function git-sync() {
+  git checkout master && git pull upstream master && echo && git-trim master && git push
+}
+
 # boot2docker
 eval `boot2docker shellinit 2>/dev/null`
 
