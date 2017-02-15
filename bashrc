@@ -76,6 +76,11 @@ fi
 
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+if [ `which pyenv 2> /dev/null` ]; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 export RBXOPT=-X19
 
 ############################################################
