@@ -88,12 +88,13 @@ export RBXOPT=-X19
 ############################################################
 
 # Change the window title of X terminals
+HOME_DEV="$HOME/dev/"
 case $TERM in
   xterm*|rxvt|Eterm|eterm)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'
+    PROMPT_COMMAND='echo -ne "\033]0;${PWD/$HOME_DEV/}\007"'
     ;;
   screen)
-    PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+    PROMPT_COMMAND='echo -ne "\033_${PWD/$HOME_DEV/}\033\\"'
     ;;
 esac
 
