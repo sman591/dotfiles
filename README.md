@@ -27,17 +27,7 @@ This install script is idempotent, meaning you can run it over and over again
 without fear of breaking anything. Use it as an installer or to upgrade after
 merging from an upstream fork.
 
-**(Option 2)** If you'd like to just symlink one or more configurations to your
-home directory manually, you can.  If you take this approach, you'll have to
-update all the git submodules manually.
-
-    $ cd ~/.dotfiles
-    $ git submodule sync
-    $ git submodule update --init --recursive
-    $ ln -ns emacs   ~/.emacs
-    $ ln -ns emacs.d ~/.emacs.d
-
-**(Option 3)** Just look around and pick and choose what you like for your own
+**(Option 2)** Just look around and pick and choose what you like for your own
   dotfiles.
 
 # System Dependencies
