@@ -70,6 +70,7 @@ alias gsl="git shortlog -sn"
 alias gw="git whatchanged"
 alias gsu="git submodule update --init --recursive"
 alias gi="git config branch.master.remote 'origin'; git config branch.master.merge 'refs/heads/master'"
+alias gamd="git commit --amend --no-edit"
 if [ `which hub 2> /dev/null` ]; then
   alias git="hub"
 fi
