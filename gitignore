@@ -18,3 +18,4 @@ gemfiles/vendor
 /dump
 venv/
 npm-debug.log
+yarn-error.log
