@@ -55,6 +55,7 @@ alias g="git"
 alias gb="git branch -a -v"
 alias gc="git commit -v"
 alias gca="git commit -v -a"
+alias gcm="git commit -v -m"
 alias gd="git diff"
 alias gl="git pull --prune"
 alias glr="git pull --rebase"
@@ -78,6 +79,7 @@ alias git-churn="git log --pretty="format:" --name-only | grep -vE '^(vendor/|$)
 alias gfix="git commit --fixup"
 alias gabort="git rebase --abort"
 alias gcont="git rebase --continue"
+alias p="git add --patch"
 
 # Useful report of what has been committed locally but not yet pushed to another
 # branch.  Defaults to the remote origin/master.  The u is supposed to stand for
