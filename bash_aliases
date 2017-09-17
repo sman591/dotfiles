@@ -158,8 +158,6 @@ function gemdoc {
   open `gemdir`/doc/`gemfind $1`/rdoc/index.html
 }
 
-alias rhash="rbenv rehash"
-
 ############################################################
 ## Bundler
 ############################################################

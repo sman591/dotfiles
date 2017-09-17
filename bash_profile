@@ -8,4 +8,3 @@ fi
 if [ -e ~/.bash_local ] ; then
   . ~/.bash_local
 fi
-
