@@ -202,6 +202,8 @@ function hproduction {
   heroku `heroku_command $*` --remote production
 }
 
+alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
+
 ############################################################
 ## Rails
 ############################################################
