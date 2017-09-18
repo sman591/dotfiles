@@ -19,14 +19,12 @@ function conditionally_prefix_path {
   fi
 }
 
-conditionally_prefix_path /usr/local/bin
+# conditionally_prefix_path /usr/local/bin
 conditionally_prefix_path /usr/local/sbin
 conditionally_prefix_path /usr/local/share/npm/bin
 conditionally_prefix_path /usr/local/mysql/bin
-conditionally_prefix_path /usr/local/heroku/bin
-conditionally_prefix_path /usr/texbin
-conditionally_prefix_path ~/bin
-conditionally_prefix_path ~/bin/private
+#conditionally_prefix_path ~/bin
+#conditionally_prefix_path ~/bin/private
 conditionally_prefix_path $GOPATH/bin
 conditionally_prefix_path $HOME/.yarn/bin
 
@@ -223,9 +221,6 @@ function git-sync() {
   git checkout master && git pull upstream master && echo && git-trim master && git push
 }
 
-# boot2docker
-eval `boot2docker shellinit 2>/dev/null`
-
 ############################################################
 ## Ruby Performance Boost (see https://gist.github.com/1688857)
 ############################################################
@@ -234,9 +229,9 @@ export RUBY_GC_MALLOC_LIMIT=60000000
 # export RUBY_FREE_MIN=200000 # Ruby <= 2.0
 export RUBY_GC_HEAP_FREE_SLOTS=200000 # Ruby >= 2.1
 
-# added by travis gem
-[ -f /Volumes/Monster/Users/stuart/.travis/travis.sh ] && source /Volumes/Monster/Users/stuart/.travis/travis.sh
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 export COCOAPODS_NO_BUNDLER=1
+
+############################################################
+## End of standard bashrc - anything below this line may
+## have been added by some third-party installation
+############################################################
