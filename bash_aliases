@@ -203,30 +203,6 @@ function hproduction {
 alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
 
 ############################################################
-## Rails
-############################################################
-
-alias tl="tail -f log/development.log"
-
-# Rails 3
-alias sr="script/rails"
-alias src="sr console"
-
-# Rails 3 or 4
-function r {
-  if [ -e "script/rails" ]; then
-    script/rails $*
-  else
-    rails $* # Assumes rbenv-binstubs
-  fi
-}
-
-############################################################
-## MongoDB
-############################################################
-alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
-
-############################################################
 ## Miscellaneous
 ############################################################
 
