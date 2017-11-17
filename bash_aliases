@@ -237,6 +237,8 @@ alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias venv="source venv/bin/activate"
 
+alias dcp="docker-compose"
+
 function serve {
   local port=$1
   : ${port:=3000}
