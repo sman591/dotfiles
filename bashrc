@@ -196,6 +196,10 @@ elif [ -e ~/.bash_completion ]; then
   . ~/.bash_completion
 fi
 
+# Django bash completion
+# https://github.com/django/django/blob/master/extras/django_bash_completion
+. ~/.django_bash_completion
+
 ############################################################
 ## Other
 ############################################################
