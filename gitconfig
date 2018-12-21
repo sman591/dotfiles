@@ -24,6 +24,9 @@
   push = HEAD
 [diff]
   ignoresubmodules = untracked
+  tool = default-difftool
+[difftool "default-difftool"]
+  cmd = code --wait --diff $LOCAL $REMOTE
 [core]
   excludesfile = ~/.gitignore
 [heroku]
