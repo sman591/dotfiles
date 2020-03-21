@@ -9,69 +9,17 @@ add-alias ()
 }
 
 ############################################################
-## Bash
-############################################################
-
-alias cd..="cd .."
-alias ..="cd .."
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias .2="cd ../../"
-alias .3="cd ../../../"
-alias .4="cd ../../../../"
-alias .5="cd ../../../../../"
-alias ~="cd ~"
-
-alias c="clear"
-
-alias path='echo -e ${PATH//:/\\n}'
-alias ax="chmod a+x"
-
-############################################################
-## List
-############################################################
-
-if [[ `uname` == 'Darwin' ]]; then
-  alias ls="ls -G"
-  # good for dark backgrounds
-  export LSCOLORS=gxfxcxdxbxegedabagacad
-else
-  alias ls="ls --color=auto"
-  # good for dark backgrounds
-  export LS_COLORS='no=00:fi=00:di=00;36:ln=00;35:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=00;31:'
-  # For LS_COLORS template: $ dircolors /etc/DIR_COLORS
-fi
-
-alias l="ls"
-alias ll="ls -lh"
-alias la="ls -a"
-alias lal="ls -alh"
-
-############################################################
 ## Git
 ############################################################
 
-alias g="git"
 alias gb="git branch -a -v"
-alias gc="git commit -v"
 alias gca="git commit -v -a"
-alias gcm="git commit -v -m"
-alias gd="git diff"
 alias gl="git pull --prune"
 alias glr="git pull --rebase"
 alias gf="git fetch --prune"
-alias gp="git push"
-alias gs="git status -sb"
-alias gr="git remote"
 alias grp="git remote prune"
-alias gcp="git cherry-pick"
-alias gg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci)%Creset' --abbrev-commit --date=relative --max-count=1000"
-alias ggs="gg --stat"
-alias gsl="git shortlog -sn"
-alias gw="git whatchanged"
 alias gsu="git submodule update --init --recursive"
 alias gi="git config branch.master.remote 'origin'; git config branch.master.merge 'refs/heads/master'"
-alias gamd="git commit --amend --no-edit"
 if [ `which hub 2> /dev/null` ]; then
   alias git="hub"
 fi
@@ -79,7 +27,6 @@ alias git-churn="git log --pretty="format:" --name-only | grep -vE '^(vendor/|$)
 alias gfix="git commit --fixup"
 alias gabort="git rebase --abort"
 alias gcont="git rebase --continue"
-alias p="git add --patch"
 
 # Useful report of what has been committed locally but not yet pushed to another
 # branch.  Defaults to the remote origin/master.  The u is supposed to stand for
@@ -175,49 +122,6 @@ alias bu="b update"
 alias be="b exec"
 #alias binit="bi && bundle package"
 
-############################################################
-## Middleman
-############################################################
-alias m="be middleman"
-
-############################################################
-## Heroku
-############################################################
-
-function heroku_command {
-  if [ -z "$*" ]; then
-    echo "run console"
-  else
-    echo "$*"
-  fi
-}
-
-function hstaging {
-  heroku `heroku_command $*` --remote staging
-}
-
-function hproduction {
-  heroku `heroku_command $*` --remote production
-}
-
-alias dokku='$HOME/.dokku/contrib/dokku_client.sh'
-
-############################################################
-## Yarn
-############################################################
-alias y="yarn"
-alias yu="y update"
-
-############################################################
-## Miscellaneous
-############################################################
-
-alias cs='ssh swo8127@georgia.cs.rit.edu'
-alias v='vagrant'
-alias t='gittower .'
-alias kc='kubectl '
-alias meteor='/usr/local/bin/meteor'
-
 export GREP_COLOR="1;37;41"
 alias grep="grep --color=auto"
 alias wgeto="wget -q -O -"
@@ -235,14 +139,6 @@ alias whichlinux='uname -a; cat /etc/*release; cat /etc/issue'
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias venv="source venv/bin/activate"
-
-alias dcp="docker-compose"
-
-function serve {
-  local port=$1
-  : ${port:=3000}
-  ruby -rwebrick -e"s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd, :MimeTypes => WEBrick::HTTPUtils::load_mime_types('/etc/apache2/mime.types')); trap(%q(INT)) { s.shutdown }; s.start"
-}
 
 function eachd {
   for dir in *; do

@@ -68,7 +68,19 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  bundler
+  osx
+  rake
+  rbenv
+  ruby
+  command-not-found
+  docker
+  docker-compose
+  kubectl
+  yarn
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -80,11 +92,14 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='code --wait'
+fi
+
+setopt auto_cd
+cdpath=($HOME/dev)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,3 +112,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source ~/.zsh_aliases
