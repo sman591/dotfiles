@@ -215,7 +215,6 @@ alias yu="y update"
 alias cs='ssh swo8127@georgia.cs.rit.edu'
 alias v='vagrant'
 alias t='gittower .'
-alias s='subl '
 alias kc='kubectl '
 alias meteor='/usr/local/bin/meteor'
 
