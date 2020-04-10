@@ -17,7 +17,10 @@
   ui = true
   pager = true
 [merge]
-  summary = true
+    summary = true
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 [push]
   default = upstream
 [remote "origin"]

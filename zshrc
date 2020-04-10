@@ -188,3 +188,5 @@ git_info() {
 PS1='
 ╭─ $(ssh_info)%{$fg[magenta]%}%~%u $(git_info)
 ╰─ %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
+
+export THOR_MERGE=~/.dotfiles/utils/mergetool_for_rails_generator
