@@ -8,7 +8,6 @@ brew install rbenv ruby-build rbenv-default-gems bash-completion
 brew install nodenv
 brew install redis
 brew install postgresql
-brew install yarn
 brew install tldr
 
 echo "Installing user utilities..."

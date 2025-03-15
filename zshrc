@@ -71,7 +71,7 @@ ZSH_THEME="bira"
 plugins=(
   git
   bundler
-  osx
+  macos
   rake
   rbenv
   ruby
