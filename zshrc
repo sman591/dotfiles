@@ -79,7 +79,6 @@ plugins=(
   docker
   docker-compose
   kubectl
-  yarn
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -190,3 +189,7 @@ PS1='
 ╰─ %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
 
 export THOR_MERGE=~/.dotfiles/utils/mergetool_for_rails_generator
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+eval "$(nodenv init - zsh)"
