@@ -12,21 +12,48 @@ add-alias ()
 ## Git
 ############################################################
 
-alias gb="git branch -a -v"
+alias g="git"
+alias gb="git branch -v"
+alias gc="git commit -v"
 alias gca="git commit -v -a"
+alias gcm="git commit -v -m"
+alias gd="git diff"
+alias gds="git diff --staged"
 alias gl="git pull --prune"
 alias glr="git pull --rebase"
 alias gf="git fetch --prune"
+alias gp="git push"
+alias gs="git status -sb"
+alias gr="git remote"
 alias grp="git remote prune"
+alias gcp="git cherry-pick"
+# NOTE: add --graph back once it works in RDE
+alias gg="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci)%Creset' --abbrev-commit --date=relative --max-count=1000"
+alias ggs="gg --stat"
+alias gsl="git shortlog -sn"
+alias gw="git whatchanged"
 alias gsu="git submodule update --init --recursive"
 alias gi="git config branch.master.remote 'origin'; git config branch.master.merge 'refs/heads/master'"
+alias gamd="git commit --amend --no-edit"
 if [ `which hub 2> /dev/null` ]; then
   alias git="hub"
 fi
 alias git-churn="git log --pretty="format:" --name-only | grep -vE '^(vendor/|$)' | sort | uniq -c | sort"
 alias gfix="git commit --fixup"
+alias gfixm="git commit --fixup :/"
 alias gabort="git rebase --abort"
 alias gcont="git rebase --continue"
+alias p="git add --patch"
+
+############################################################
+## Graphite
+############################################################
+
+alias gtm="gt modify"
+alias gtc="gt create -m"
+alias gty="gt sync"
+alias gts="gt submit"
+alias gtp="gt push"
 
 # Useful report of what has been committed locally but not yet pushed to another
 # branch.  Defaults to the remote origin/master.  The u is supposed to stand for
