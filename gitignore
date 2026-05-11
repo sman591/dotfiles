@@ -19,3 +19,4 @@ gemfiles/vendor
 venv/
 npm-debug.log
 yarn-error.log
+.claude/
